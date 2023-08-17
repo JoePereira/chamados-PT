@@ -4,7 +4,9 @@ package br.com.fiap.domain.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "TB_AREA")
+@Table(name = "TB_AREA", uniqueConstraints = {
+        @UniqueConstraint(name = "UK_NM_AREA", columnNames = {"NM_AREA"})
+})
 public class Area {
 
     @Id
@@ -13,7 +15,7 @@ public class Area {
     @Column(name = "ID_AREA")
     private Long id;
 
-    @Column(name = "NM_AREA")
+    @Column(name = "NM_AREA", nullable = false)
     private String nome;
 
     @Column(name = "DS_AREA")
