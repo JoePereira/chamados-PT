@@ -1,6 +1,5 @@
 package br.com.fiap.domain.entity;
 
-
 import jakarta.persistence.*;
 
 @Entity
